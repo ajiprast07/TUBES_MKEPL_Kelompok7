@@ -29,3 +29,12 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+
+    - name: Run SonarCloud Analysis
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}    
+      run: mvn verify sonar:sonar \
+          -Dsonar.projectKey=Yogihafidh_Basic-Java-Maven-main \
+          -Dsonar.organization=percobaan2025 \
+          -Dsonar.host.url=https://sonarcloud.io
