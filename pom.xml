@@ -16,7 +16,7 @@
     <repository>
       <id>github</id>
       <name>GitHub Packages</name>
-      <url>https://maven.pkg.github.com/Satriaariq23/TUBES_MKEPL_Kelompok7</url>
+      <url>https://maven.pkg.github.com/ajiprast07/TUBES_MKEPL_Kelompok7</url>
     </repository>
   </distributionManagement>
   
