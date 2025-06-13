@@ -1,0 +1,36 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Continuous Integration (Build)
+      run: mvn clean compile
+
+    - name: Continuous Testing
+      run: mvn test
+
+    - name: Continuous Inspection - Checkstyle
+      run: mvn checkstyle:check
+
+    - name: Continuous Inspection - SpotBugs
+      run: mvn spotbugs:check
+
+    - name: Continuous Deployment (simulasi)
+      run: echo "🎉 App successfully built & tested. Ready to deploy!"
