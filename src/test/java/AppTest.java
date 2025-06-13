@@ -1,12 +1,9 @@
-package calculator;
-
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
-public class CalculatorTest {
+public class AppTest {
     @Test
-    void testAdd() {
-        Calculator calc = new Calculator();
-        assertEquals(4, calc.add(2, 2));
+    public void testAdd() {
+        assertEquals(7, App.add(3, 4));
     }
 }
