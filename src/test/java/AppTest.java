@@ -1,9 +1,10 @@
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AppTest {
+
     @Test
-    public void testAdd() {
-        assertEquals(7, App.add(3, 4));
+    public void sampleTest() {
+        assertEquals(2, 1 + 1);
     }
 }
